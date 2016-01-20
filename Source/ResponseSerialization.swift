@@ -294,6 +294,18 @@ extension Request {
             completionHandler: completionHandler
         )
     }
+    
+    func responseJSON(
+        queue queue: dispatch_queue_t,
+        completionHandler: (NSURLRequest?, NSHTTPURLResponse?, Result<AnyObject>) -> Void)
+        -> Self
+    {
+        return response(
+            queue: queue,
+            responseSerializer: Request.JSONResponseSerializer(options: .AllowFragments),
+            completionHandler: completionHandler
+        )
+    }
 }
 
 // MARK: - Property List
