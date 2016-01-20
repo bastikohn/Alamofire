@@ -297,7 +297,7 @@ extension Request {
     
     func responseJSON(
         queue queue: dispatch_queue_t,
-        completionHandler: (NSURLRequest?, NSHTTPURLResponse?, Result<AnyObject>) -> Void)
+        completionHandler: (NSURLRequest?, NSHTTPURLResponse?, Result<AnyObject, NSError>) -> Void)
         -> Self
     {
         return response(
